@@ -1,5 +1,7 @@
 obj/
 bin/
+.idea/
+*.iml
 
 
 # Mobile Tools for Java (J2ME)
