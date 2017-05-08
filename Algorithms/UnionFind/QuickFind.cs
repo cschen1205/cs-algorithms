@@ -11,7 +11,7 @@ namespace CSChen.Algorithms.UnionFind
         public QuickFind(int n)
         {
             mID = new int[n];
-            for (int i = 0; i < n; ++i)
+            for (var i = 0; i < n; ++i)
             {
                 mID[i] = i;
             }
@@ -19,7 +19,16 @@ namespace CSChen.Algorithms.UnionFind
 
         public void Union(int i, int j)
         {
-            mID[i] = mID[j];
+            var p = mID[i];
+            var q = mID[j];
+            if (p == q) return;
+            for (var k = 0; k < mID.Length; ++k)
+            {
+                if (mID[k] == q)
+                {
+                    mID[k] = p;
+                }
+            }
         }
 
         public bool IsConnected(int i, int j)
