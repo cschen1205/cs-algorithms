@@ -13,7 +13,7 @@ namespace CSChen.Algorithms.UnionFind
         {
             mParent = new int[n];
             mSize = new int[n];
-            for (int i = 0; i < n; ++i)
+            for (var i = 0; i < n; ++i)
             {
                 mParent[i] = i;
                 mSize[i] = 1;
@@ -31,8 +31,8 @@ namespace CSChen.Algorithms.UnionFind
 
         public void Union(int p, int q)
         {
-            int i = GetRoot(p);
-            int j = GetRoot(q);
+            var i = GetRoot(p);
+            var j = GetRoot(q);
             if (mSize[i] < mSize[j])
             {
                 mParent[i] = j;
