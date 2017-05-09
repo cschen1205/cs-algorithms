@@ -1,5 +1,8 @@
 obj/
 bin/
+**/obj/
+**/bin/
+packages/
 .idea/
 *.iml
 

@@ -4,10 +4,10 @@ using Xunit.Abstractions;
 
 namespace AlgorithmsUnitTest.UnionFind
 {
-    public class QuickFindUnitTest
+    public class QuickUnionUnitTest
     {
         private readonly ITestOutputHelper logger;
-        public QuickFindUnitTest(ITestOutputHelper console)
+        public QuickUnionUnitTest(ITestOutputHelper console)
         {
             this.logger = console;
         }
@@ -15,7 +15,7 @@ namespace AlgorithmsUnitTest.UnionFind
         [Fact]
         public void test_union_find()
         {
-            var uf = new QuickFind(10);
+            var uf = new QuickUnion(10);
             uf.Union(1, 3);
             uf.Union(2, 3);
             uf.Union(5, 6);

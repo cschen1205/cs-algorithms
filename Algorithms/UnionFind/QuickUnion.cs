@@ -11,7 +11,7 @@ namespace CSChen.Algorithms.UnionFind
         public QuickUnion(int n)
         {
             mParentID = new int[n];
-            for (int i = 0; i < n; ++i)
+            for (var i = 0; i < n; ++i)
             {
                 mParentID[i] = i;
             }
@@ -19,8 +19,8 @@ namespace CSChen.Algorithms.UnionFind
 
         public void Union(int i, int j)
         {
-            int p = GetRoot(i);
-            int q = GetRoot(j);
+            var p = GetRoot(i);
+            var q = GetRoot(j);
             mParentID[p] = q;
         }
 
