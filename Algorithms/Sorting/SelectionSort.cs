@@ -21,5 +21,10 @@ namespace Algorithms.Sorting
                 SortUtil.Exchange(a, i, J);
             }
         }
+
+        public static void Sort<T>(T[] a) where T : IComparable<T>
+        {
+            Sort(a, 0, a.Length-1, (a1, a2) => a1.CompareTo(a2));
+        }
     }
 }
