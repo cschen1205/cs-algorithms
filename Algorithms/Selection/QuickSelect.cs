@@ -8,7 +8,7 @@ namespace SimuKit.Algorithms.Selection
 {
     public class QuickSelect
     {
-        public static T Select<T>(T[] a, int k, IComparer<T> compareTo = null)
+        public static T Select<T>(T[] a, int k, Comparison<T> compareTo = null)
         {
             int lo = 0;
             int hi = a.Length - 1;
@@ -23,7 +23,7 @@ namespace SimuKit.Algorithms.Selection
             return a[k];
         }
 
-        public static int Partition<T>(T[] a, int lo, int hi, IComparer<T> compareTo)
+        public static int Partition<T>(T[] a, int lo, int hi, Comparison<T> compareTo)
         {
             int i = lo;
             int j = hi + 1;
