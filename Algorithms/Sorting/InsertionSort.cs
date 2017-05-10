@@ -11,7 +11,7 @@ namespace Algorithms.Sorting
             {
                 for (var j = i-1; j >= lo; --j)
                 {
-                    if (SortUtil.IsLessThan(a[j], a[j + 1], compare))
+                    if (SortUtil.IsLessThan(a[j+1], a[j], compare))
                     {
                         SortUtil.Exchange(a, j, j + 1);
                     }
