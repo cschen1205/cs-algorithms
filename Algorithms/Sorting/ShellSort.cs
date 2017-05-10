@@ -34,5 +34,10 @@ namespace Algorithms.Sorting
                 step--;
             }
         }
+
+        public static void Sort<T>(T[] ints) where T : IComparable<T>
+        {
+            Sort(ints, (a1, a2) => a1.CompareTo(a2));
+        }
     }
 }
