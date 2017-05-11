@@ -1,5 +1,6 @@
 ﻿using System;
 using Algorithms.Utils;
+using Microsoft.Extensions.Logging;
 
 namespace Algorithms.Sorting
 {
@@ -45,8 +46,8 @@ namespace Algorithms.Sorting
             for(var k=lo; k <= hi; ++k)
             {
                 if (i >= mid) a[k] = aux[j++];
-                if (j >= hi) a[k] = aux[i++];
-                if (SortUtil.IsLessThan(a[i], a[j], compare))
+                else if (j >= hi) a[k] = aux[i++];
+                else if (SortUtil.IsLessThan(aux[i], aux[j], compare))
                 {
                     a[k] = aux[i++];
                 }
