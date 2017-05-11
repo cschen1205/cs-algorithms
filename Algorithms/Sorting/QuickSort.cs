@@ -43,7 +43,7 @@ namespace Algorithms.Sorting
                     if (j <= lo) break;
                 }
 
-                if (i > j)
+                if (i >= j)
                 {
                     break;
                 }
