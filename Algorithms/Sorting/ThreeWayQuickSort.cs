@@ -25,15 +25,20 @@ namespace Algorithms.Sorting
 
 
             int i = lo, lt = lo, gt = hi;
-            while (i < gt)
+            var v = a[lo];
+            while (i <= gt)
             {
-                if (SortUtil.IsLessThan(a[lo], a[lt], compare))
+                if (SortUtil.IsLessThan(v, a[i], compare))
                 {
                     SortUtil.Exchange(a, i++, lt++);
                 }
-                if (SortUtil.IsLessThan(a[gt], a[lo], compare))
+                else if (SortUtil.IsLessThan(a[i], v, compare))
                 {
                     SortUtil.Exchange(a, i, gt--);
+                }
+                else
+                {
+                    i++;
                 }
             }
 
