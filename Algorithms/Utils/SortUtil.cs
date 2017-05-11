@@ -13,7 +13,7 @@ namespace Algorithms.Utils
 
         public static bool IsGreaterThan<T>(T p0, T p1, Comparison<T> compareTo)
         {
-            return compareTo(p0, p1) < 0;
+            return compareTo(p0, p1) > 0;
         }
 
         public static void Exchange<T>(T[] a, int i, int j)

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using Algorithms.Utils;
 
 namespace Algorithms.Sorting
@@ -32,27 +31,24 @@ namespace Algorithms.Sorting
         public static int Partition<T>(T[] a, int lo, int hi, Comparison<T> compare)
         {
             var v = a[lo];
-            int i = lo, j = lo, k = hi;
-            while (j <= k)
+            int i = lo, j = hi+1;
+            while (true)
             {
-                while (SortUtil.IsLessThan(a[j++], v, compare))
+                while (SortUtil.IsLessThan(a[++i], v, compare))
                 {
-                    if (j >= hi) break;
+                    if (i >= hi) break;
                 }
-                while (SortUtil.IsGreaterThan(a[k--], v, compare))
+                while (SortUtil.IsLessThan(v, a[--j], compare))
                 {
-                    if (k <= lo) break;
+                    if (j <= lo) break;
                 }
 
-                if (j > k)
+                if (i > j)
                 {
                     break;
                 }
 
-                if (SortUtil.IsLessThan(a[k], a[j], compare))
-                {
-                    SortUtil.Exchange(a, j, k);
-                }
+                SortUtil.Exchange(a, i, j);
             }
             SortUtil.Exchange(a, lo, j);
             return j;
