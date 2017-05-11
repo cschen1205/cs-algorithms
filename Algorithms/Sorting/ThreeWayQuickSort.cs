@@ -28,11 +28,11 @@ namespace Algorithms.Sorting
             var v = a[lo];
             while (i <= gt)
             {
-                if (SortUtil.IsLessThan(v, a[i], compare))
+                if (SortUtil.IsLessThan(a[i], v, compare))
                 {
                     SortUtil.Exchange(a, i++, lt++);
                 }
-                else if (SortUtil.IsLessThan(a[i], v, compare))
+                else if (SortUtil.IsLessThan(v, a[i], compare))
                 {
                     SortUtil.Exchange(a, i, gt--);
                 }
