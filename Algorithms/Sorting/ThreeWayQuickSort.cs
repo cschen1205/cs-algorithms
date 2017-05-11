@@ -9,7 +9,7 @@ namespace Algorithms.Sorting
         {
             Sort(a, 0, a.Length-1, (a1, a2) => a1.CompareTo(a2));
         }
-        
+
         public static void Sort<T>(T[] a, int lo, int hi, Comparison<T> compare)
         {
             if (lo >= hi)
