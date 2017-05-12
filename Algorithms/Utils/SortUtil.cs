@@ -27,5 +27,10 @@ namespace Algorithms.Utils
         {
             return IsLessThan(p0, p1, (a1, a2) => a1.CompareTo(a2));
         }
+
+         public static bool IsGreaterThan<T>(T p0, T p1) where T : IComparable<T>
+                {
+                    return IsGreaterThan(p0, p1, (a1, a2) => a1.CompareTo(a2));
+                }
     }
 }
