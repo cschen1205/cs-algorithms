@@ -22,5 +22,10 @@ namespace Algorithms.Utils
             a[i] = a[j];
             a[j] = temp;
         }
+
+        public static bool IsLessThan<T>(T p0, T p1) where T : IComparable<T>
+        {
+            return IsLessThan(p0, p1, (a1, a2) => a1.CompareTo(a2));
+        }
     }
 }
