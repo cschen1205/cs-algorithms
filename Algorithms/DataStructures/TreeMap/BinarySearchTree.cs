@@ -136,5 +136,13 @@ namespace Algorithms.DataStructures.TreeMap
 
         public int Count => _Count(root);
         public bool IsEmpty => _Count(root) == 0;
+
+        public bool ContainsKey(K key)
+        {
+            var x = Get(root, key);
+            return x != null;
+
+        }
+
     }
 }

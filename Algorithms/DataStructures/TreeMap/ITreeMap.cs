@@ -7,5 +7,6 @@ namespace Algorithms.DataStructures.TreeMap
         V this[K key] { get; set; }
         int Count { get;  }
         bool IsEmpty { get; }
+        bool ContainsKey(K key);
     }
 }
