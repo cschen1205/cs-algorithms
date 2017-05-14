@@ -15,8 +15,9 @@ namespace Algorithms.Search
             while (lo <= hi)
             {
                 int mid = lo + (hi - lo) / 2;
-                if (SortUtil.IsLessThan(a[mid], v, comparison)) lo = mid;
-                else if (SortUtil.IsGreaterThan(a[mid], v, comparison)) hi = mid;
+                if (SortUtil.IsLessThan(a[mid], v, comparison)) lo = mid+1;
+                else if (SortUtil.IsGreaterThan(a[mid], v, comparison)) hi = mid - 1;
+                else return mid;
             }
             return -1;
         }
