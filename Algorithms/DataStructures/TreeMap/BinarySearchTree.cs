@@ -4,13 +4,14 @@ using Algorithms.DataStructures.Queue;
 
 namespace Algorithms.DataStructures.TreeMap
 {
-    internal class Node<K, V> where K : IComparable<K>
+    public class Node<K, V> where K : IComparable<K>
     {
         internal K key;
         internal V value;
         internal Node<K, V> left;
         internal Node<K, V> right;
         internal int count = 0;
+        internal bool isRed = false;
     }
 
     public class BinarySearchTree<K, V> : ITreeMap<K, V> where K : IComparable<K>
@@ -23,7 +24,7 @@ namespace Algorithms.DataStructures.TreeMap
             root = Put(root, key, value);
         }
 
-        private Node<K, V> Put(Node<K, V> x, K key, V value)
+        protected virtual Node<K, V> Put(Node<K, V> x, K key, V value)
         {
             if (x == null)
             {
@@ -71,7 +72,7 @@ namespace Algorithms.DataStructures.TreeMap
             return x;
         }
 
-        private int _Count(Node<K, V> x)
+        protected int _Count(Node<K, V> x)
         {
             return x == null ? 0 : x.count;
         }

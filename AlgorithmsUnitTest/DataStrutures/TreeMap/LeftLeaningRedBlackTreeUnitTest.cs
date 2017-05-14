@@ -5,10 +5,10 @@ using Xunit.Abstractions;
 
 namespace AlgorithmsUnitTest.DataStrutures.TreeMap
 {
-    public class BinarySearchTreeUnitTest
+    public class LeftLeaningRedBlackTreeUnitTest
     {
         private ITestOutputHelper console;
-        public BinarySearchTreeUnitTest(ITestOutputHelper console)
+        public LeftLeaningRedBlackTreeUnitTest(ITestOutputHelper console)
         {
             this.console = console;
         }
@@ -16,8 +16,7 @@ namespace AlgorithmsUnitTest.DataStrutures.TreeMap
         [Fact]
         public void TestTreeMap()
         {
-            var map = new BinarySearchTree<int, int>();
-            Assert.True(map.IsEmpty);
+            var map = new LeftLeaningRedBlackTree<int, int>();
             map[1] = 1;
             Assert.Equal(1, map[1]);
             map[2] = 2;
@@ -28,7 +27,19 @@ namespace AlgorithmsUnitTest.DataStrutures.TreeMap
             Assert.Equal(1, map.Count);
             Assert.True(map.ContainsKey(1));
             Assert.False(map.ContainsKey(2));
-            Assert.False(map.IsEmpty);
+
+            for (var i = 3; i < 100; ++i)
+            {
+                map[i] = i;
+            }
+
+            Assert.True(map.ContainsKey(1));
+            for (var i = 3; i < 100; ++i)
+            {
+                Assert.True(map.ContainsKey(i));
+            }
+
+            Assert.Equal(98, map.Count);
         }
     }
 }
