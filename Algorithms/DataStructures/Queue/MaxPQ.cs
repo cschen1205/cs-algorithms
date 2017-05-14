@@ -103,6 +103,7 @@ namespace Algorithms.DataStructures.Queue
         {
             private T[] values;
             private int current = 0;
+            private T value;
 
             public QueueEnumerator(T[] s, int N)
             {
@@ -144,6 +145,7 @@ namespace Algorithms.DataStructures.Queue
                 {
                     return false;
                 }
+                value = values[current];
 
                 current++;
                 return true;
@@ -154,7 +156,7 @@ namespace Algorithms.DataStructures.Queue
                 current = 0;
             }
 
-            public T Current => values[current];
+            public T Current => value;
 
             object IEnumerator.Current
             {

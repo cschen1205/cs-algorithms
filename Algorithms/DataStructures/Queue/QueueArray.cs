@@ -59,6 +59,7 @@ namespace Algorithms.DataStructures.Queue
             private T[] s;
             private int head;
             private int tail;
+            private T value;
 
             public QueueEnumerator(T[] s, int head, int tail)
             {
@@ -71,6 +72,7 @@ namespace Algorithms.DataStructures.Queue
             public bool MoveNext()
             {
                 if (current == tail) return false;
+                value = s[current];
                 current++;
                 return true;
             }
@@ -80,7 +82,7 @@ namespace Algorithms.DataStructures.Queue
                 current = head;
             }
 
-            public T Current => s[current];
+            public T Current => value;
 
             object IEnumerator.Current
             {

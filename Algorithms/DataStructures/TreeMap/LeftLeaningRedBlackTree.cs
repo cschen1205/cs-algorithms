@@ -4,7 +4,7 @@ namespace Algorithms.DataStructures.TreeMap
 {
     public class LeftLeaningRedBlackTree<K, V> : BinarySearchTree<K, V> where K : IComparable<K>
     {
-        protected virtual Node<K, V> Put(Node<K, V> x, K key, V value)
+        protected override Node<K, V> Put(Node<K, V> x, K key, V value)
         {
             if (x == null)
             {

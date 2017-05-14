@@ -66,6 +66,7 @@ namespace Algorithms.DataStructures.Queue
         {
             private QueueNode<T> head;
             private QueueNode<T> current;
+            private T value;
             public QueueEnumerator(QueueNode<T> head)
             {
                 this.head = head;
@@ -74,6 +75,7 @@ namespace Algorithms.DataStructures.Queue
             public bool MoveNext()
             {
                 if (current == null) return false;
+                value = current.item;
                 current = current.Next;
                 return true;
             }
@@ -83,7 +85,7 @@ namespace Algorithms.DataStructures.Queue
                 current = head;
             }
 
-            public T Current => current.item;
+            public T Current => value;
 
             object IEnumerator.Current
             {
