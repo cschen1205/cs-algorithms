@@ -11,7 +11,7 @@ namespace Algorithms.DataStructures.TreeMap
         internal Node<K, V> right;
     }
 
-    public class BinarySearchTree<K, V> where K : IComparable<K>
+    public class BinarySearchTree<K, V> : ITreeMap<K, V> where K : IComparable<K>
     {
 
         private Node<K, V> root;
@@ -34,7 +34,7 @@ namespace Algorithms.DataStructures.TreeMap
                 };
             }
 
-            int cmp = key.CompareTo(x.key);
+            var cmp = key.CompareTo(x.key);
 
             if (cmp < 0)
             {
@@ -54,15 +54,8 @@ namespace Algorithms.DataStructures.TreeMap
 
         public V Get(K key)
         {
-            Node<K, V> x = Get(root, key);
-            if (x != null)
-            {
-                return x.value;
-            }
-            else
-            {
-                return default(V);
-            }
+            var x = Get(root, key);
+            return x != null ? x.value : default(V);
         }
 
         private static Node<K, V> Get(Node<K, V> x, K key)
@@ -75,6 +68,14 @@ namespace Algorithms.DataStructures.TreeMap
             return x;
         }
 
-        
+
+        public V this[K key]
+        {
+            get => Get(key);
+            set => Put(key, value);
+        }
+
+        public int Count => N;
+        public bool IsEmpty => N == 0;
     }
 }
