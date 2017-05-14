@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Algorithms.DataStructures.Queue;
 
 namespace Algorithms.DataStructures.TreeMap
@@ -145,5 +146,29 @@ namespace Algorithms.DataStructures.TreeMap
 
         }
 
+        public K MinKey()
+        {
+            var x = Min(root);
+            if (x == null) return default(K);
+            return x.key;
+        }
+
+        public IEnumerable<K> Keys
+        {
+            get
+            {
+                IQueue<K> queue = new QueueLinkedList<K>();
+                Collect(root, queue);
+                return queue;
+            }
+        }
+
+        private void Collect(Node<K, V> x, IQueue<K> queue)
+        {
+            if (x == null) return;
+            Collect(x.left, queue);
+            queue.Enqueue(x.key);
+            Collect(x.right,queue);
+        }
     }
 }

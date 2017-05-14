@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using Algorithms.Utils;
 
@@ -87,5 +89,82 @@ namespace Algorithms.DataStructures.Queue
 
         public int Count => N;
         public bool IsEmpty => N == 0;
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new QueueEnumerator(s, N);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private class QueueEnumerator : IEnumerator<T>
+        {
+            private T[] values;
+            private int current = 0;
+
+            public QueueEnumerator(T[] s, int N)
+            {
+                s = (T[]) s.Clone();
+                this.values = new T[N];
+                int k = 0;
+                while (N > 0)
+                {
+                    values[k++] = s[1];
+                    SortUtil.Exchange(s, 1, N--);
+                    Sink(s, 1, N);
+                }
+            }
+
+            private void Sink(T[] s, int k, int N)
+            {
+                while (k * 2 <= N)
+                {
+                    int child = k * 2;
+                    if (child < N && SortUtil.IsGreaterThan(s[child + 1], s[child]))
+                    {
+                        child++;
+                    }
+                    if (SortUtil.IsGreaterThan(s[child], s[k]))
+                    {
+                        SortUtil.Exchange(s, k, child);
+                        k = child;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            public bool MoveNext()
+            {
+                if (current == values.Length)
+                {
+                    return false;
+                }
+
+                current++;
+                return true;
+            }
+
+            public void Reset()
+            {
+                current = 0;
+            }
+
+            public T Current => values[current];
+
+            object IEnumerator.Current
+            {
+                get { return Current; }
+            }
+
+            public void Dispose()
+            {
+
+            }
+        }
     }
 }

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Net.Http.Headers;
 
 namespace Algorithms.DataStructures.Queue
 {
@@ -39,5 +42,57 @@ namespace Algorithms.DataStructures.Queue
 
         public int Count => tail - head;
         public bool IsEmpty => tail - head == 0;
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new QueueEnumerator(s, head, tail);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private class QueueEnumerator : IEnumerator<T>
+        {
+            private int current;
+            private T[] s;
+            private int head;
+            private int tail;
+
+            public QueueEnumerator(T[] s, int head, int tail)
+            {
+                current = head;
+                this.head = head;
+                this.tail = tail;
+                this.s = s;
+            }
+
+            public bool MoveNext()
+            {
+                if (current == tail) return false;
+                current++;
+                return true;
+            }
+
+            public void Reset()
+            {
+                current = head;
+            }
+
+            public T Current => s[current];
+
+            object IEnumerator.Current
+            {
+                get { return Current; }
+            }
+
+            public void Dispose()
+            {
+
+            }
+        }
     }
+
+
 }

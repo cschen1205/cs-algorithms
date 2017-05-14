@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Algorithms.DataStructures.TreeMap
 {
@@ -8,5 +9,7 @@ namespace Algorithms.DataStructures.TreeMap
         int Count { get;  }
         bool IsEmpty { get; }
         bool ContainsKey(K key);
+        K MinKey();
+        IEnumerable<K> Keys { get;  }
     }
 }

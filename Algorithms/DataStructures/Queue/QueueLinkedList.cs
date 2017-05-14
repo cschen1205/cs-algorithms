@@ -1,4 +1,8 @@
-﻿namespace Algorithms.DataStructures.Queue
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Algorithms.DataStructures.Queue
 {
     internal class QueueNode<T>
     {
@@ -48,5 +52,48 @@
 
         public int Count => N;
         public bool IsEmpty => N == 0;
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new QueueEnumerator(head);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private class QueueEnumerator : IEnumerator<T>
+        {
+            private QueueNode<T> head;
+            private QueueNode<T> current;
+            public QueueEnumerator(QueueNode<T> head)
+            {
+                this.head = head;
+                this.current = head;
+            }
+            public bool MoveNext()
+            {
+                if (current == null) return false;
+                current = current.Next;
+                return true;
+            }
+
+            public void Reset()
+            {
+                current = head;
+            }
+
+            public T Current => current.item;
+
+            object IEnumerator.Current
+            {
+                get { return Current; }
+            }
+
+            public void Dispose()
+            {
+
+            }
+        }
     }
 }

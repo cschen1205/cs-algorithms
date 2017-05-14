@@ -1,10 +1,16 @@
 ﻿using Algorithms.DataStructures.Queue;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace AlgorithmsUnitTest.DataStrutures.Queue
 {
     public class MaxPQUnitTest
     {
+        private ITestOutputHelper console;
+        public MaxPQUnitTest(ITestOutputHelper console)
+        {
+            this.console = console;
+        }
         [Fact]
         public void TestMaxPQ()
         {
@@ -22,6 +28,11 @@ namespace AlgorithmsUnitTest.DataStrutures.Queue
                 Assert.Equal(99-i, pq.Count);
             }
             Assert.True(pq.IsEmpty);
+
+            foreach (var v in pq)
+            {
+                console.WriteLine("{0}", v);
+            }
         }
     }
 }

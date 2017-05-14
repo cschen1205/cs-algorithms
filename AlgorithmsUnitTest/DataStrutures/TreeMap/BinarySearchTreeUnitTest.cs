@@ -29,6 +29,11 @@ namespace AlgorithmsUnitTest.DataStrutures.TreeMap
             Assert.True(map.ContainsKey(1));
             Assert.False(map.ContainsKey(2));
             Assert.False(map.IsEmpty);
+
+            foreach(int key in map.Keys)
+            {
+                console.WriteLine("{0}", key);
+            }
         }
     }
 }
