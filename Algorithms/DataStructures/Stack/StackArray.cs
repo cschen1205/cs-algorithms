@@ -81,7 +81,7 @@ public bool IsEmpty => N == 0;
 
         public void Dispose()
         {
-            
+
         }
     }
 }
