@@ -1,4 +1,6 @@
-﻿using System.Xml;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Xml;
 
 namespace DataStructures.Stack
 {
@@ -36,5 +38,53 @@ namespace DataStructures.Stack
         public int Count => N;
 
         public bool IsEmpty => Count == 0;
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new StackEnumerator(first);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private class StackEnumerator : IEnumerator<T>
+        {
+            private T value;
+            private StackNode<T> current;
+            private StackNode<T> first;
+
+            public StackEnumerator(StackNode<T> first)
+            {
+                this.first = first;
+                this.current = first;
+            }
+
+
+            public bool MoveNext()
+            {
+                if (current == null) return false;
+                value = current.item;
+                current = current.Next;
+                return true;
+            }
+
+            public void Reset()
+            {
+                current = first;
+            }
+
+            public T Current => value;
+
+            object IEnumerator.Current
+            {
+                get { return Current; }
+            }
+
+            public void Dispose()
+            {
+
+            }
+        }
     }
 }
