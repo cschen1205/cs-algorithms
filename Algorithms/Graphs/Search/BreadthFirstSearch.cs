@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Algorithms.DataStructures.Graphs;
 using Algorithms.DataStructures.Queue;
 using DataStructures.Stack;
@@ -53,7 +55,24 @@ namespace Algorithms.Graphs.Search
             return path;
         }
 
-
+        public String PathToString(int v)
+        {
+            var sb = new StringBuilder();
+            var first = true;
+            foreach (var x in Path(v))
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    sb.Append(" => ");
+                }
+                sb.Append(x);
+            }
+            return sb.ToString();
+        }
     }
 
 
