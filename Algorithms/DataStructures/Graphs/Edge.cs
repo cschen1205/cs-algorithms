@@ -1,10 +1,13 @@
-﻿namespace Algorithms.DataStructures.Graphs
+﻿using System;
+
+namespace Algorithms.DataStructures.Graphs
 {
-    public class Edge
+    public class Edge : IComparable<Edge>
     {
         private int v;
         private int w;
         private double weight;
+        private IComparable<Edge> _comparableImplementation;
 
         public Edge(int v, int w, double weight)
         {
@@ -37,5 +40,14 @@
         public double Weight => weight;
 
 
+        public int CompareTo(Edge that)
+        {
+            return weight.CompareTo(that.Weight);
+        }
+
+        public override String ToString()
+        {
+            return v + " =(" + weight + ")=> " + w;
+        }
     }
 }
