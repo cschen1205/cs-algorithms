@@ -30,5 +30,19 @@ namespace Algorithms.DataStructures.Graphs
         {
             adjList[v].Add(w);
         }
+
+        public DiGraph reverse()
+        {
+            var g = new DiGraph(vertexCount);
+            for (var v = 0; v < vertexCount; ++v)
+            {
+                foreach (var w in adjList[v])
+                {
+                    g.addEdge(w, v);
+                }
+            }
+
+            return g;
+        }
     }
 }

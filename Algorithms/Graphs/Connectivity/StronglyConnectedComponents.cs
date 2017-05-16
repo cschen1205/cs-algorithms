@@ -1,38 +1,32 @@
-﻿using System.Threading;
-using Algorithms.DataStructures.Graphs;
+﻿using Algorithms.DataStructures.Graphs;
+using Algorithms.Graphs.TopologicalSort;
 
 namespace Algorithms.Graphs.Connectivity
 {
-    public class ConnectedComponents
+    public class StronglyConnectedComponents
     {
         private bool[] marked;
         private int[] id;
-        private int count = 0;
-
-        public ConnectedComponents(Graph G)
+        private int count;
+        public StronglyConnectedComponents(DiGraph G)
         {
             count = 0;
             var V = G.V();
             marked = new bool[V];
             id = new int[V];
 
-            for (var v = 0; v < V; ++v)
-            {
-                id[v] = -1;
-            }
-
-            for (var v = 0; v < V; ++v)
+            var ts = new DepthFirstPostOrder(G.reverse());
+            foreach (var v in ts.PostOrder())
             {
                 if (!marked[v])
                 {
                     dfs(G, v);
                     count++;
                 }
-
             }
         }
 
-        private void dfs(Graph G, int v)
+        private void dfs(DiGraph G, int v)
         {
             marked[v] = true;
             id[v] = count;
