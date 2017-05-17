@@ -43,5 +43,17 @@ namespace Algorithms.DataStructures.Graphs
             }
             return result;
         }
+
+        public DiGraph ToDiGraph()
+        {
+            DiGraph g = new DiGraph(vertexCount);
+
+            foreach(var e in edges())
+            {
+                g.addEdge(e.from(), e.to());
+            }
+
+            return g;
+        }
     }
 }
