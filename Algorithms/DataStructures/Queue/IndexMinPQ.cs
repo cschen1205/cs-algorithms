@@ -80,6 +80,21 @@ namespace Algorithms.DataStructures.Queue
             }
         }
 
+        public void DecreaseKey(int index, T item)
+        {
+            int p = qp[index];
+            if (SortUtil.IsGreaterThan(keys[index], item))
+            {
+                keys[index] = item;
+                Swim(p);
+            }
+        }
+
+        public bool Contains(int index)
+        {
+            return qp[index] == -1;
+        }
+
         private void Sink(int k)
         {
             while (k * 2 <= N)
@@ -103,7 +118,7 @@ namespace Algorithms.DataStructures.Queue
             }
         }
 
-        private void Insert(int index, T item)
+        public void Insert(int index, T item)
         {
             keys[index] = item;
             pq[++N] = index;
