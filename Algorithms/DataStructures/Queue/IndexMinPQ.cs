@@ -92,7 +92,7 @@ namespace Algorithms.DataStructures.Queue
 
         public bool Contains(int index)
         {
-            return qp[index] == -1;
+            return qp[index] != -1;
         }
 
         private void Sink(int k)

@@ -40,7 +40,7 @@ namespace Algorithms.Graphs.MST
                 int w = e.other(v);
                 if (!marked[w])
                 {
-                    if (pq.Contains(w))
+                    if (!pq.Contains(w))
                     {
                         pq.Insert(w, e);
                     }

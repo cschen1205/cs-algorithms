@@ -24,10 +24,15 @@ namespace AlgorithmsUnitTest.Graphs.ShortestPaths
             Dijkstra dijkstra = new Dijkstra(G, 0);
             for(var v=1; v < G.V(); ++v)
             {
-                if (!dijkstra.HasPathTo(v)) continue;
+                if (!dijkstra.HasPathTo(v))
+                {
+                    Console.WriteLine("Path not found for {0}", v);
+                    continue;
+                }
                 IEnumerable<Edge> path = dijkstra.PathTo(v);
 
                 console.WriteLine(ToString(path));
+                Console.WriteLine(ToString(path));
             }
         }
 
