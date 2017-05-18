@@ -19,7 +19,4 @@
       <Name>Algorithms</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Graphs\ShortestPath" />
-  </ItemGroup>
 </Project>
