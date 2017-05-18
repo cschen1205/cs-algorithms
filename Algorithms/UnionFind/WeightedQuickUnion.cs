@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CSChen.Algorithms.UnionFind
+namespace Algorithms.UnionFind
 {
     public class WeightedQuickUnion : IUnionFind
     {

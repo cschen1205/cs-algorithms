@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSChen.Algorithms.UnionFind
+namespace Algorithms.UnionFind
 {
     public class Percolation
     {

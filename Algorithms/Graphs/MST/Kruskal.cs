@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Algorithms.DataStructures.Graphs;
 using Algorithms.DataStructures.Queue;
-using CSChen.Algorithms.UnionFind;
+using Algorithms.UnionFind;
 
 namespace Algorithms.Graphs.MST
 {

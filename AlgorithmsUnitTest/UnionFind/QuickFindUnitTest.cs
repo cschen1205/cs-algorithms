@@ -1,4 +1,4 @@
-﻿using CSChen.Algorithms.UnionFind;
+﻿using Algorithms.UnionFind;
 using Xunit;
 using Xunit.Abstractions;
 

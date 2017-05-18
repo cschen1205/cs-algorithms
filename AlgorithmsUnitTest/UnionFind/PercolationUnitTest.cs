@@ -1,5 +1,5 @@
 ﻿using System;
-using CSChen.Algorithms.UnionFind;
+using Algorithms.UnionFind;
 using Xunit;
 
 namespace AlgorithmsUnitTest.UnionFind

@@ -20,8 +20,8 @@ namespace AlgorithmsUnitTest.Graphs.ShortestPaths
         [Fact]
         public void Test()
         {
-            WeightedDiGraph G = GraphGenerator.directedEdgeWeightedGraph();
-            TopologicalSortShortestPath TopologicalSortShortestPath = new TopologicalSortShortestPath(G, 0);
+            var G = GraphGenerator.directedEdgeWeightedGraph();
+            var TopologicalSortShortestPath = new TopologicalSortShortestPath(G, 0);
             for(var v=1; v < G.V(); ++v)
             {
                 if (!TopologicalSortShortestPath.HasPathTo(v))
