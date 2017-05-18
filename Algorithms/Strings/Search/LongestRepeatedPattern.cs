@@ -11,13 +11,13 @@ namespace Algorithms.Strings.Search
             String[] a = new String[N];
             for (var i = 0; i < N; ++i)
             {
-                a[i] = text.Substring(i, N);
+                a[i] = text.Substring(i, N-i);
             }
 
             QuickSort.Sort(a);
 
             String result = "";
-            for (int i = 0; i < N-1; ++i)
+            for (int i = 0; i < a.Length-1; ++i)
             {
                 var j = lcp(a[i], a[i + 1]);
                 if (result.Length < j)
