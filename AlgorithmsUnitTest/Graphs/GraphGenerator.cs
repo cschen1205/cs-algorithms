@@ -1,4 +1,5 @@
 ﻿using Algorithms.DataStructures.Graphs;
+using Algorithms.Graphs.MaxFlow;
 
 namespace AlgorithmsUnitTest.Graphs
 {
@@ -133,6 +134,27 @@ namespace AlgorithmsUnitTest.Graphs
             g.addEdge(new Edge(7, 2, 7.0));
             return g;
 
+        }
+
+        public static FlowNetwork flowNetwork() {
+            FlowNetwork g = new FlowNetwork(8);
+            g.addEdge(new FlowEdge(0, 1, 10));
+            g.addEdge(new FlowEdge(0, 2, 5));
+            g.addEdge(new FlowEdge(0, 3, 15));
+            g.addEdge(new FlowEdge(1, 4, 9));
+            g.addEdge(new FlowEdge(1, 5, 15));
+            g.addEdge(new FlowEdge(1, 2, 4));
+            g.addEdge(new FlowEdge(2, 5, 8));
+            g.addEdge(new FlowEdge(2, 3, 4));
+            g.addEdge(new FlowEdge(3, 6, 16));
+            g.addEdge(new FlowEdge(4, 5, 15));
+            g.addEdge(new FlowEdge(4, 7, 10));
+            g.addEdge(new FlowEdge(5, 7, 10));
+            g.addEdge(new FlowEdge(5, 6, 15));
+            g.addEdge(new FlowEdge(6, 2, 6));
+            g.addEdge(new FlowEdge(6, 7, 10));
+
+            return g;
         }
     }
 
