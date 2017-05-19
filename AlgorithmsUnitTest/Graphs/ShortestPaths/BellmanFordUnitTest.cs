@@ -8,11 +8,11 @@ using Xunit.Abstractions;
 
 namespace AlgorithmsUnitTest.Graphs.ShortestPaths
 {
-    public class BellmanFulkersonUnitTest
+    public class BellmanFordUnitTest
     {
         private ITestOutputHelper console;
 
-        public BellmanFulkersonUnitTest(ITestOutputHelper console)
+        public BellmanFordUnitTest(ITestOutputHelper console)
         {
             this.console = console;
         }
