@@ -5,7 +5,7 @@ bin/
 packages/
 .idea/
 *.iml
-
+build/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

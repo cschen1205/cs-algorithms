@@ -1,0 +1,1 @@
+dotnet pack Algorithms/Algorithms.csproj /p:PackageVersion=1.0.1 --configuration release --include-source --output ../build
