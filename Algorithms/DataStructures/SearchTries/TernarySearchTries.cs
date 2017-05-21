@@ -88,14 +88,28 @@ namespace Algorithms.DataStructures.SearchTries
 
         public int Count => N;
         public bool IsEmpty => N == 0;
+
         public void Delete(string key)
         {
-            throw new System.NotImplementedException();
+            Node x = Get(root, key, 0);
+            if (x != null)
+            {
+                if (!ObjectUtil.IsNullOrDefault(x.value))
+                {
+                    N--;
+                }
+                x.value = default(T);
+            }
         }
 
         public bool ContainsKey(string key)
         {
-            throw new System.NotImplementedException();
+            Node x = Get(root, key, 0);
+            if(x !=null)
+            {
+                return !ObjectUtil.IsNullOrDefault(x.value);
+            }
+            return false;
         }
 
         public IEnumerable<string> Keys { get; }

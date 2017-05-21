@@ -27,13 +27,14 @@ namespace AlgorithmsUnitTest.DataStrutures.TreeMap
             Assert.Equal(2, map.Count);
 
 
-            /*
+
             map.Delete("two");
             Assert.Equal(1, map.Count);
             Assert.True(map.ContainsKey("one"));
             Assert.False(map.ContainsKey("two"));
             Assert.False(map.IsEmpty);
 
+            /*
 
             foreach(var key in map.Keys)
             {
