@@ -34,12 +34,13 @@ namespace AlgorithmsUnitTest.DataStrutures.TreeMap
             Assert.False(map.ContainsKey("two"));
             Assert.False(map.IsEmpty);
 
-            /*
+
 
             foreach(var key in map.Keys)
             {
                 console.WriteLine("{0}", key);
             }
+
 
             map["test"] = 3;
             map["te"] = 4;
@@ -52,7 +53,7 @@ namespace AlgorithmsUnitTest.DataStrutures.TreeMap
                 count++;
                 console.WriteLine("{0}", key);
             }
-            Assert.Equal(3, count);*/
+            Assert.Equal(3, count);
         }
     }
 }

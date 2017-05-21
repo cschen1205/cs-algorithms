@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Algorithms.DataStructures.Queue;
 using Algorithms.Utils;
 
 namespace Algorithms.DataStructures.SearchTries
@@ -112,10 +113,43 @@ namespace Algorithms.DataStructures.SearchTries
             return false;
         }
 
-        public IEnumerable<string> Keys { get; }
+        public IEnumerable<string> Keys
+        {
+            get
+            {
+                var queue = new QueueLinkedList<string>();
+
+                Collect(root, "", queue);
+
+                return queue;
+            }
+        }
+
+        private void Collect(Node x, string prefix, IQueue<string> queue)
+        {
+            if (x == null)
+            {
+                return;
+            }
+            if (!ObjectUtil.IsNullOrDefault(x.value))
+            {
+                queue.Enqueue(prefix);
+            }
+            Collect(x.left, prefix, queue);
+            Collect(x.mid, prefix + x.key, queue);
+            Collect(x.right, prefix, queue);
+        }
+
         public IEnumerable<string> KeysWithPrefix(string prefix)
         {
-            throw new System.NotImplementedException();
+            IQueue<string> queue = new QueueLinkedList<string>();
+
+            Node x = Get(root, prefix, 0);
+            if (x != null)
+            {
+                Collect(x, prefix, queue);
+            }
+            return queue;
         }
     }
 }
