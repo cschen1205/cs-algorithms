@@ -20,10 +20,9 @@ namespace AlgorithmsUnitTest.Strings.Sort
             var words= "bed bug dad yes zoo now for tip ilk dim tag jot sob nob sky hut men egg few jay owl joy rap gig wee was wad fee tap tar dug jam all bad yet".Split(' ');
             MSD.Sort(words);
 
-            for (var i = 0; i < words.Length; ++i)
+            for (var i = 1; i < words.Length; ++i)
             {
-                console.WriteLine(words[i]);
-                Console.WriteLine(words[i]);
+                Assert.True(words[i-1].CompareTo(words[i]) <= 0);
             }
 
         }
