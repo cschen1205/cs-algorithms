@@ -3,6 +3,10 @@ Package cs-algorithms provides C# implementation of algorithms for data structur
 
 [![Build Status](https://travis-ci.org/cschen1205/cs-algorithms.svg?branch=master)](https://travis-ci.org/cschen1205/cs-algorithms)
 
+# Install
+
+Install-Package cs-algorithms
+
 # Features
 
 * Data Structure
