@@ -4,4 +4,4 @@ sudo: required
 mono: none
 dotnet: 1.0.3
 script:
-  - cd AlgorithmsUnitTest && dotnet restore && dotnet build && dotnet test
+  - cd cs-algorithms-unit-tests && dotnet restore && dotnet build && dotnet test
