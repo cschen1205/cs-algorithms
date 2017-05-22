@@ -39,8 +39,8 @@ namespace Algorithms.Strings.Search
             if (h == patHash) return 0;
             for (var i = 1; i < N - M; ++i)
             {
-                h = (h + Q - RM * text[i - 1]) % Q;
-                h = (h * R + text[i + M]) % Q;
+                h = (h + Q - RM * text[i - 1] % Q) % Q;
+                h = (h * R + text[i + M - 1]) % Q;
 
                 if (h == patHash) return i;
             }
