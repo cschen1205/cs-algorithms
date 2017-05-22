@@ -13,11 +13,11 @@
             {
                 dfs[i] = new int[M];
             }
-            dfs[0][0] = 1;
+            dfs[pat[0]][0] = 1;
             int X = 0;
             for (var i = 1; i < M; ++i)
             {
-                for (var r = 0; r < R; ++i)
+                for (var r = 0; r < R; ++r)
                 {
                     dfs[r][i] = dfs[r][X];
                 }
@@ -33,7 +33,7 @@
             for (var i = 0; i < N; ++i)
             {
                 X = dfs[text[i]][X];
-                if (X == M) return i;
+                if (X == M) return i-M+1;
             }
             return -1;
         }
