@@ -21,11 +21,11 @@ namespace Algorithms.Strings.Search
 
         public int Search(string text)
         {
-            int skip = 1;
+            int skip;
             for (int i = 0; i < text.Length - M; i+=skip)
             {
-                var j;
-                for (j = M - 1; j >= 0; j--)
+                skip = 0;
+                for (var j = M - 1; j >= 0; j--)
                 {
                     if (text[i + j] != pat[j])
                     {
@@ -33,7 +33,7 @@ namespace Algorithms.Strings.Search
                         break;
                     }
                 }
-                if (j == -1) return i;
+                if (skip == 0) return i;
             }
             return -1;
         }
