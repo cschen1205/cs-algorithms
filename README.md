@@ -1,9 +1,11 @@
 # cs-algorithms
-Package cs-algorithms provides C# implementation of algorithms for data structures and manipulation, as well as graph and string processing
+Package cs-algorithms provides C# implementation of algorithms for data structures and manipulation, as well as graph and string processing. The project is written with .NET Core and is cross-platform for development.
 
 [![Build Status](https://travis-ci.org/cschen1205/cs-algorithms.svg?branch=master)](https://travis-ci.org/cschen1205/cs-algorithms)
 
 # Install
+
+Run the following command using nuget:
 
 Install-Package cs-algorithms
 
@@ -117,7 +119,6 @@ Install-Package cs-algorithms
 
   - String Search
 
-    + Brute force
     + Rabin Karp
     + Boyer Moore
     + Knuth Morris Pratt
