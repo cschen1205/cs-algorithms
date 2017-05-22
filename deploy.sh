@@ -1,1 +1,2 @@
-dotnet pack Algorithms/Algorithms.csproj /p:PackageVersion=1.0.1 --configuration release --include-source --output ../build
+dotnet pack cs-algorithms/cs-algorithms.csproj /p:PackageVersion=1.0.1 --configuration release --include-source --output ../build
+nuget push build/cs-algorithms.1.0.1.nupkg -Source https://www.nuget.org/api/v2/package

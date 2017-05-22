@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{238151A2-DCDA-4BEF-8052-73E7B2E95CE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-algorithms", "cs-algorithms\cs-algorithms.csproj", "{238151A2-DCDA-4BEF-8052-73E7B2E95CE4}"
 EndProject
-Project("{2AD4B6A7-11A8-4CB6-B83D-91F491E938AE}") = "AlgorithmsUnitTest", "AlgorithmsUnitTest\AlgorithmsUnitTest.csproj", "{B48EB8B6-1C8F-4822-A00F-591394C1E9C8}"
+Project("{2AD4B6A7-11A8-4CB6-B83D-91F491E938AE}") = "cs-algorithms-unit-tests", "cs-algorithms-unit-tests\cs-algorithms-unit-tests.csproj", "{B48EB8B6-1C8F-4822-A00F-591394C1E9C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

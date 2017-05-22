@@ -14,9 +14,9 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
+    <ProjectReference Include="..\cs-algorithms\cs-algorithms.csproj">
       <Project>{238151a2-dcda-4bef-8052-73e7b2e95ce4}</Project>
-      <Name>Algorithms</Name>
+      <Name>cs-algorithms</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
