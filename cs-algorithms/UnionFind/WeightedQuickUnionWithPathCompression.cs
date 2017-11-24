@@ -40,16 +40,19 @@ namespace Algorithms.UnionFind
         {
             int i = GetRoot(p);
             int j = GetRoot(q);
-            if (mSize[i] < mSize[j])
+            if (i!=j)
             {
-                mParent[i] = j;
-                mSize[j] += mSize[i];
-            }
-            else
-            {
-                mParent[j] = i;
-                mSize[i] += mSize[j];
-            }
+                if (mSize[i] < mSize[j])
+                {
+                    mParent[i] = j;
+                    mSize[j] += mSize[i];
+                }
+                else
+                {
+                    mParent[j] = i;
+                    mSize[i] += mSize[j];
+                }
+            }         
         }
 
         public bool IsConnected(int i, int j)
